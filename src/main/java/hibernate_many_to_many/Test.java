@@ -57,14 +57,37 @@ public class Test {
 //            session.getTransaction().commit();
 //            System.out.println("done");
 
+//            session.beginTransaction();
+//            Section section = session.get(Section.class, 1);
+//            session.delete(section);
+//            System.out.println(section);
+//            System.out.println(section.getChildList());
+//            session.getTransaction().commit();
+//            System.out.println("done");
+
+//            Section section1 = new Section("section1");
+//            Child child1 = new Child("Ivan", 3);
+//            Child child2 = new Child("Masha", 6);
+//            Child child3 = new Child("Oleg", 7);
+//            section1.addChildToSection(child1);
+//            section1.addChildToSection(child2);
+//            section1.addChildToSection(child3);
+//            session.beginTransaction();
+//            session.persist(section1);
+//            session.getTransaction().commit();
+//            System.out.println("done");
+
+//            session.beginTransaction();
+//            Section section = session.get(Section.class, 7);
+//            session.delete(section);
+//            session.getTransaction().commit();
+//            System.out.println("done");
+
             session.beginTransaction();
-            Section section = session.get(Section.class, 1);
-            session.delete(section);
-            System.out.println(section);
-            System.out.println(section.getChildList());
+            Child child = session.get(Child.class, 1);
+            session.delete(child);
             session.getTransaction().commit();
             System.out.println("done");
-
 
         } finally {
             sessionFactory.close();
